@@ -16,7 +16,7 @@ The MIGHTEE dataset is used for these tutorials. It contains 2824 data points, w
 
 
 ## Hackathon Task
-After completing the tutorials, teams will be asked to present the best machine learning clustering model that distinguishes between SFGs and AGN. Note that this problem is an unsupervised learning challenge, meaning teams will need to rely on algorithms that do not require labeled data for model training. Few examples can be found [here](https://scikit-learn.org/stable/modules/clustering.html).
+After completing the tutorials, teams will be asked to present the best machine learning clustering model that distinguishes between SFGs and AGN. Note that this problem is an unsupervised learning challenge, meaning teams will need to rely on algorithms that do not require labeled data for model training. Few examples can be found [here](https://scikit-learn.org/stable/modules/clustering.html).  However, a labeled validation set is be provided to validate the performance of the clustering models.
 
 
 ### Would you like to clone this repository? Feel free!
@@ -48,3 +48,6 @@ git pull
 ```
 
 ----
+# Original research work:
+
+Silima, Walter. "Machine learning approaches to study star formation and black hole accretion in the Meerkat/MIGHTEE survey." (2023). [DOI](https://etd.uwc.ac.za/handle/11394/10406) 
