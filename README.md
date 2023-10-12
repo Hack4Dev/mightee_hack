@@ -48,6 +48,3 @@ git pull
 ```
 
 ----
-# Original research work:
-
-Silima, Walter. "Machine learning approaches to study star formation and black hole accretion in the Meerkat/MIGHTEE survey." (2023). [DOI](https://etd.uwc.ac.za/handle/11394/10406) 
