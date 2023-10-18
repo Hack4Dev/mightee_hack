@@ -1,0 +1,181 @@
+README for MIGHTEE Early Science COSMOSXMATCH+multiinfo_v3.fits
+------------------------------------------------------------------------------------------
+
+This catalogue contains multiwavelength cross-matches and optical, near- and far-infrared information for the radio sources in the central part of the MIGHTEE Early Science Data in the COSMOS field.
+For use by members of the MIGHTEE collaboration to aid with MIGHTEE Early Science projects.
+
+Based on the pybdsf r0p0 gaul catalogue: zoom5450_MIGHTEE_COSMOS_r0p0.app.restored.circ_pbcor.gaul.fits
+Limited to the following region:
+ra = 150.11916666667, dec = 2.205833333333302, radius = 31.0 arcmin
+
+Cross-matches are from COSMOSXMATCHESAPRIL21.fits by Matt Prescott.
+The first 13 columns are taken from that catalogue.
+
+Note that only sources with a multi-wavelength counterpart are included here - see COSMOSXMATCHESAPRIL21.fits
+for the full sample.
+
+------------------------------------------------------------------------------------------
+CATID - unique ID
+GAUS_ID - Gaus ID of radio component from the r0p0 gaul pybdsf catalogue 
+(zoom5450_MIGHTEE_COSMOS_r0p0.app.restored.circ_pbcor.gaul.fits)
+Note that 'a' or 'b' etc has been appended in the case of split sources.
+
+------------------------------------------------------------------------------------------
+cols 3 - 13
+
+RADIORA: Radio Source Right Ascension (J2000)
+RADIODEC: Radio Source Declination (J2000)
+TOTALFLUX: Integrated flux of radio source in Jy. For multiple component sources, this is the sum of components. 
+TOTALFLUXERR: Error on integrated flux.
+PEAKFLUX: Peak flux of radio source in Jy/beam. For multiple component sources, this is peak of the brightest component.
+PEAKFLUXERR: Error on integrated flux.
+MATCHID: Optical counterpart ID from COSMOS_DR2_MASKVISTA_Ks_2.0as_IRAC2.8as_cgs_Spec.fits  
+NCOMP: Number of radio components. Less than 0 if flagged source.
+OPTICALRA: Counterpart Right Ascension (J2000)
+OPTICALDEC: Counterpart Declination (J2000)
+FLAG: Radio Source flag. Description below. Best to use FLAG = 100 and 120. 
+
+Values of flags: 
+
+100 =  Single comp (good).  
+120 = Multiple comp (good). 
+101 = No match - not included in this catalogue
+102 = Too Confused to split - not included in this catalogue
+103 = Junk/artefact - not included in this catalogue  
+105 = Unmatched lobe - not included in this catalogue
+112 = Split flux (use at peril).
+
+Note that the flux errors are set to 0 for the sources with split fluxes (flag=112). 
+The uncertainties on these flux densities are large and they should be used with extreme caution.
+
+
+------------------------------------------------------------------------------------------
+cols 14 - 56
+
+Optical and NIR photometry from COSMOS_DR2_MASKVISTA_Ks_2.0as_IRAC2.8as_cgs_Spec.fits  
+
+Units are erg/cm^2/s/Hz
+
+Credits: Nathan Adams, Rebecca Bowler
+
+------------------------------------------------------------------------------------------
+cols 58 - 69
+
+MIPS (24 um) info from HELP - for full details see readme here: 
+https://github.com/H-E-L-P/dmu_products/blob/master/dmu26/dmu26_XID%2BMIPS_COSMOS/README.md
+
+and Hurley, P. et al. 2017, MNRAS 464, 885
+
+help_id                    -  ID
+RA                   degrees  Right Ascension (J2000)
+Dec                  degrees  Declination (J2000)
+F_MIPS_24               uJy  Flux density at 24 µm (Median)
+FErr_MIPS_24_u          uJy  Flux density at 24 µm (84th Percentile)
+FErr_MIPS_24_l          uJy  Flux density at 250 µm (16th Percentile)
+Bkg_MIPS_24           MJy/Sr  Fitted Background of 23 µm map (Median)
+Sig_conf_MIPS_24      MJy/Sr  fixed at 0
+Rhat_MIPS_24             -  Convergence Statistic (ideally <1.2)
+n_eff_MIPS_24            -  Number of effective samples (ideally >40)
+Pval_res_MIPS_24         -  Local Goodness of fit measure: 0=good, 1=bad
+
+------------------------------------------------------------------------------------------
+cols 70 - 89
+
+PACS (100 and 160 um) info from HELP - for full details see readme here:
+https://github.com/H-E-L-P/dmu_products/blob/master/dmu26/dmu26_XID%2BPACS_COSMOS/README.md
+
+and Hurley, P. et al. 2017, MNRAS 464, 885
+
+help_id                    -  ID
+RA                   degrees  Right Ascension (J2000)
+Dec                  degrees  Declination (J2000)
+F_PACS_100               uJy  Flux density at 100 µm (Median)
+FErr_PACS_100_u          uJy  Flux density at 100 µm (84th Percentile)
+FErr_PACS_100_l          uJy  Flux density at 100 µm (16th Percentile)
+F_PACS_160               uJy  Flux density at 160 µm (Median)
+FErr_PACS_160_u          uJy  Flux density at 160 µm (84th Percentile)
+FErr_PACS_160_l          uJy  Flux density at 160 µm (16th Percentile)
+Bkg_PACS_100           MJy/Sr  Fitted Background of 100µm map (Median)
+Bkg_PACS_160           MJy/Sr  Fitted Background of 160µm map (Median)
+Sig_conf_PACS_100      MJy/Sr  Additional confusion noise parameter
+Sig_conf_PACS_160      MJy/Sr  Additional confusion noise parameter
+Rhat_PACS_100             -  Convergence Statistic (ideally <1.2)
+Rhat_PACS_160             -  Convergence Statistic (ideally <1.2)
+n_eff_PACS_100            -  Number of effective samples (ideally >40)
+n_eff_PACS_160            -  Number of effective samples (ideally >40)
+Pval_res_PACS_100               -  Local Goodness of fit measure: 0=good, 1=bad
+Pval_res_PACS_160               -  Local Goodness of fit measure: 0=good, 1=bad
+
+
+------------------------------------------------------------------------------------------
+cols 90 - 117
+
+SPIRE (250, 350, 500 um) info from HELP - for full details see readme here:
+https://github.com/H-E-L-P/dmu_products/blob/master/dmu26/dmu26_XID%2BSPIRE_COSMOS/README.md
+
+and Hurley, P. et al. 2017, MNRAS 464, 885
+
+help_id - ID
+RA degrees Right Ascension (J2000)
+Dec degrees Declination (J2000)
+F_SPIRE_250 mJy Flux density at 250 µm (Median)
+FErr_SPIRE_250_u mJy Flux density at 250 µm (84th Percentile)
+FErr_SPIRE_250_l mJy Flux density at 250 µm (16th Percentile)
+F_SPIRE_350 mJy Flux density at 350 µm (Median)
+FErr_SPIRE_350_u mJy Flux density at 350 µm (84th Percentile)
+FErr_SPIRE_350_l mJy Flux density at 350 µm (16th Percentile)
+F_SPIRE_500 mJy Flux density at 500 µm (Median)
+FErr_SPIRE_500_u mJy Flux density at 500 µm (84th Percentile)
+FErr_SPIRE_500_l mJy Flux density at 500 µm (16th Percentile)
+Bkg_SPIRE_250 mJy/Beam Fitted Background of 250 µm map (Median)
+Bkg_SPIRE_350 mJy/Beam Fitted Background of 350 µm map (Median)
+Bkg_SPIRE_500 mJy/Beam Fitted Background of 500 µm map (Median)
+Sig_conf_SPIRE_250 mJy/Beam Fitted residual noise component due to confusion (Median)
+Sig_conf_SPIRE_350 mJy/Beam Fitted residual noise component due to confusion (Median)
+Sig_conf_SPIRE_500 mJy/Beam Fitted residual noise component due to confusion (Median)
+Rhat_SPIRE_250 - Convergence Statistic (ideally <1.2)
+Rhat_SPIRE_350 - Convergence Statistic (ideally <1.2)
+Rhat_SPIRE_500 - Convergence Statistic (ideally <1.2)
+n_eff_SPIRE_250 - Number of effective samples (ideally >40)
+n_eff_SPIRE_350 - Number of effective samples (ideally >40)
+n_eff_SPIRE_500 - Number of effective samples (ideally >40)
+Pval_res_250 - Local Goodness of fit measure: 0=good, 1=bad
+Pval_res_350 - Local Goodness of fit measure: 0=good, 1=bad
+Pval_res_500 - Local Goodness of fit measure: 0=good, 1=bad
+
+
+------------------------------------------------------------------------------------------
+cols 118 - 127
+
+IRAC fluxes taken from COSMOS2015 Laigle+ 2016 catalogue
+(‘#’ is the filter name: SPLASH_1 (ch1, 3.6um), SPLASH_2 (ch2, 4.5um), SPLASH_3 (ch3, 5.8um), SPLASH_4 (ch4, 8.0um)):
+
+Total fluxes and fluxes errors:
+#   name = ‘#_FLUX;  unit = 'uJy'
+#   name = ‘#_FLUX_ERR'; unit = 'uJy'
+
+------------------------------------------------------------------------------------------
+cols 128 - 134
+
+Redshift info from COSMOS_DR2_MASKVISTA_Ks_2.0as_IRAC2.8as_cgs_Spec_photz2021_v3.fits
+
+COS_phot_z and COS_phot_z_uncertainty - the photometric redshift for each source and the associated uncertainty.
+COS_spec_z - Spectroscopic redshift value (if available). Compilation put together by Nathan Adams. Now includes the first 3000 DEVILS redshifts.
+COS_spec_z_uncertainty - uncertainty on spec_z if available (-99 if not available - this is the case for the DEVILS redshifts, plus some other speczs).
+COS_best_z column - best redshift value available - spectroscopic redshift if available, if not it is COS_phot_z (i.e. the best photoz available). 
+COS_best_z_uncertainty - uncertainty on best_z if available (-99 if not available - this is the case for the DEVILS redshifts, plus some other speczs).
+COS_best_z_note - note on the origin of the redshift (='photz' if photoz is used).
+
+Notes:
+- Machine learning and template photozs are combined to produce a best photoz for each source using the hierarchical Bayes method outlined in Duncan+2018
+- Template photoz are calculated with LePhare (by Nathan Adams), using both galaxy and AGN templates.
+- Machine learning photozs are calculated using GPz (by Peter Hatfield) 
+
+
+Credits: Peter Hatfield and Nathan Adams
+
+------------------------------------------------------------------------------------------
+Imogen Whittam - 05/7/21
+Any questions, please contact imogen.whittam@physics.ox.ac.uk
+
+
